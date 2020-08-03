@@ -1,0 +1,113 @@
+function Validation() {
+    var Dabba = "";
+
+    Dabba = checkname();
+    Dabba += checkage()
+    Dabba += checkcountry();
+    Dabba += checkstate();
+    Dabba += checkdob();
+    Dabba += checkemail();
+    Dabba += checkpaw();
+
+    if (Dabba != "") {
+        alert(Dabba);
+        return false;
+    }
+    else {
+        SaveData();
+    }
+}
+
+function checkname() {
+    var TB = $("#txtname");
+    var Exp = /^[a-z A-Z]+$/
+    if (TB.val() == "") {
+        return "Please Enter Your Name!!\n";
+    }
+    else if (!Exp.test(TB.val())) {
+        return "Please Enter Only In Alphabate!!\n";
+    }
+    else {
+        return "";
+    }
+}
+
+function checkage() {
+    var TB = $("#txtage");
+    var Exp = /^[0-9]+$/
+    if (TB.val() == "") {
+        return "Please Enter Your age!!\n";
+    }
+    else if (!Exp.test(TB.val())) {
+        return "Please Enter Only In numerical!!\n";
+    }
+    else {
+        return "";
+    }
+}
+
+function checkcountry() {
+    var DD = $("#ddlcountry");
+    if (DD.val() == "0") {
+        return "Please Select Your Country From Country DropDown List!!\n";
+    }
+    else {
+        return "";
+    }
+}
+
+function checkstate() {
+    var DD = $("#ddlstate");
+    if (DD.val() == "0") {
+        return "Please Select Your State From State DropDown List!!\n";
+    }
+    else {
+        return "";
+    }
+}
+
+
+function checkdob() {
+    var TB = $("#txtdob");
+    if (TB.val() == "") {
+        return "Please Select Your DOB!!\n";
+    }
+    else {
+        return "";
+    }
+}
+
+
+function checkemail() {
+    var TB = $("#txtemail");
+    var Exp = /^([a-zA-Z0-9_.-])+@(([a-zA-Z0-9-])+.)+([a-zA-Z0-9]{2,4})+$/;
+    if (TB.val() == "") {
+        return 'Please enter your email\n'
+    }
+    else if (!Exp.test(TB.val())) {
+        return "Please Enter valid email!!\n";
+    }
+    else {
+        return "";
+    }
+}
+
+
+
+
+function checkpaw() {
+    var TB1 = $("#txtpwd");
+    var TB2 = $("#txtconpwd");
+    if (TB1.val() == "") {
+        return "Please enter your password\n";
+    }
+    else if (TB2.val() == "") {
+        return "Please enter your confirm password\n";
+    }
+    else if (TB1.val() != TB2.val()) {
+        return "Password did not matched\n";
+    }
+    else {
+        return "";
+    }
+}

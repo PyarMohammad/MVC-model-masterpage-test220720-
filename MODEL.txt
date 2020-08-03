@@ -1,0 +1,21 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace mvcmodel22720.Models
+{
+    public class Student
+    {
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public int AGE { get; set; }
+        public int CTR { get; set; }
+        public int STR { get; set; }
+        public string GENDER { get; set; }
+        public string DOB { get; set; }
+        public string EMAIL { get; set; }
+        public string PWD { get; set; }
+        public string CNFPWD { get; set; }
+    }
+}
